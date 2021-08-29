@@ -108,7 +108,11 @@ func (sm *state_manager) AvgProcessTime() int {
      	 total += t
      }
 
-     return total / len(sm.process_times)
+     if len(sm.process_times) > 0 {
+     	return total / len(sm.process_times)
+     } else {
+       return 0
+     }
 }
 
 /**
