@@ -5,7 +5,7 @@ import (
     "os"
     "strconv"
     "net/http"
-    "go_web_server/state"
+    "github.com/barbacbd/http_responder/state"
     "crypto/sha512"
     "encoding/base64"
     "time"
@@ -181,7 +181,7 @@ func main() {
         os.Exit(2)
     default:
         for i := 0; i < len(server_args); i++ {
-            if (server_args[i] == "-p" || server_args[i] == "-port") && (i+1 < len(server_args)) {
+            if (server_args[i] == "-p" || server_args[i] == "--port") && (i+1 < len(server_args)) {
                 if isValidInt(server_args[i+1]) {
                     port = server_args[i+1]
                 } else {
